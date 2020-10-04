@@ -7,9 +7,12 @@
 #include <iostream>
 #include <vector>
 #include "ex1.hpp"
+#include "shapeFuncAndDiff.hpp"
 
-int main(int argc , char* argv[])
+using namespace std;
+
+int main(int argc, char* argv[])
 {
     ex1();
-}
 
+}
