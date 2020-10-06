@@ -1,9 +1,8 @@
 /*
 
 	程序作者：Max_Zhang
-	输入：局部坐标 s，t
-	输出：形函数或者形函数的导数
-	
+	输入：
+	输出：
 	主要功能：计算Q4单元的形函数及其导数
 
 */
@@ -19,7 +18,7 @@ double* shapeFunc(double s, double t)
 	N[2] = (1 - s) * (1 + t) / 4;
 	N[3] = (1 + s) * (1 + t) / 4;
 
-	return N; // 返回的是形函数数组的头指针
+	return N;
 }
 
 double* DiffShape(double s, double t)			//s,t是局部坐标

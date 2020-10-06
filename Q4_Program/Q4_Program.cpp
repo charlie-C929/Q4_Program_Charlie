@@ -14,5 +14,7 @@ using namespace std;
 int main(int argc, char* argv[])
 {
     ex1();
-
+    double s = 0.5, t = 0.5;
+    double *N = shapeFunc(s, t);
+    cout << N[0] << N[1] << N[2] << N[3] << endl;
 }
