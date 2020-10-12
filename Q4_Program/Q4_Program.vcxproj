@@ -147,12 +147,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="B_matrix.cpp" />
+    <ClCompile Include="ja.cpp" />
     <ClCompile Include="Q4_Program.cpp" />
     <ClCompile Include="ex1.cpp" />
+    <ClCompile Include="readData.cpp" />
     <ClCompile Include="shapeFuncAndDiff.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="B_matrix.hpp" />
     <ClInclude Include="ex1.hpp" />
+    <ClInclude Include="ja.hpp" />
+    <ClInclude Include="readData.hpp" />
     <ClInclude Include="shapeFuncAndDiff.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -10,7 +10,7 @@
 #include<iostream>
 using namespace std;
 
-double* shapeFunc(double s, double t)
+double* shapeFunc(double s, double t)//声明了指针函数shapeFunc,指针储存的是函数的首地址
 {
 	double N[4];
 	N[0] = (1 - s) * (1 - t) / 4;

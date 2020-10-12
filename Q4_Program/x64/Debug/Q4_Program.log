@@ -1,0 +1,152 @@
+﻿  B_matrix.cpp
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\B_matrix.cpp(6,1): error C2144: 语法错误:“double”的前面应有“;”
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\B_matrix.cpp(37,16): error C3861: “malloc”: 找不到标识符
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\B_matrix.cpp(41,19): error C3861: “malloc”: 找不到标识符
+  Q4_Program.cpp
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(42,5): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(42,1): error C2040: “L”:“int”与“double **”的间接寻址级别不同
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(42,26): error C2065: “countGrid”: 未声明的标识符
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(43,1): error C2059: 语法错误:“for”
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(43,1): error C2143: 语法错误: 缺少“)”(在“;”的前面)
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(43,15): error C2143: 语法错误: 缺少“;”(在“<”的前面)
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(43,15): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(43,33): error C2143: 语法错误: 缺少“;”(在“++”的前面)
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(43,33): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(43,32): error C2086: “int i”: 重定义
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(43): message : 参见“i”的声明
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(43,35): error C2059: 语法错误:“)”
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(44,1): error C2143: 语法错误: 缺少“;”(在“{”的前面)
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(44,1): error C2447: “{”: 缺少函数标题(是否是老式的形式表?)
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(60,1): error C2466: 不能分配常量大小为 0 的数组
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(60,9): error C2087: “L”: 缺少下标
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(60,11): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(60,15): error C2065: “K”: 未声明的标识符
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(69,1): error C2059: 语法错误:“for”
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(69,1): error C2143: 语法错误: 缺少“)”(在“;”的前面)
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(69,15): error C2143: 语法错误: 缺少“;”(在“<”的前面)
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(69,15): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(69,13): error C2086: “int i”: 重定义
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(43): message : 参见“i”的声明
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(69,33): error C2143: 语法错误: 缺少“;”(在“++”的前面)
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(69,33): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(69,32): error C2086: “int i”: 重定义
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(43): message : 参见“i”的声明
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(69,35): error C2059: 语法错误:“)”
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(70,1): error C2143: 语法错误: 缺少“;”(在“{”的前面)
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(70,1): error C2447: “{”: 缺少函数标题(是否是老式的形式表?)
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(80,1): error C2059: 语法错误:“for”
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(80,1): error C2143: 语法错误: 缺少“)”(在“;”的前面)
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(80,15): error C2143: 语法错误: 缺少“;”(在“<”的前面)
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(80,15): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(80,33): error C2143: 语法错误: 缺少“;”(在“++”的前面)
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(80,33): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(80,32): error C2086: “int j”: 重定义
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(80): message : 参见“j”的声明
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(80,35): error C2059: 语法错误:“)”
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(81,1): error C2143: 语法错误: 缺少“;”(在“{”的前面)
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(81,1): error C2447: “{”: 缺少函数标题(是否是老式的形式表?)
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(112,6): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(112,1): error C2040: “Lt”:“int”与“double **”的间接寻址级别不同
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(112,27): error C2065: “countGrid”: 未声明的标识符
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(113,1): error C2059: 语法错误:“for”
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(113,1): error C2143: 语法错误: 缺少“)”(在“;”的前面)
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(113,15): error C2143: 语法错误: 缺少“;”(在“<”的前面)
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(113,15): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(113,13): error C2086: “int i”: 重定义
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(43): message : 参见“i”的声明
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(113,33): error C2143: 语法错误: 缺少“;”(在“++”的前面)
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(113,33): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(113,32): error C2086: “int i”: 重定义
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(43): message : 参见“i”的声明
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(113,35): error C2059: 语法错误:“)”
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(114,1): error C2143: 语法错误: 缺少“;”(在“{”的前面)
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(114,1): error C2447: “{”: 缺少函数标题(是否是老式的形式表?)
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(122,1): error C2059: 语法错误:“for”
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(122,1): error C2143: 语法错误: 缺少“)”(在“;”的前面)
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(122,15): error C2143: 语法错误: 缺少“;”(在“<”的前面)
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(122,15): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(122,13): error C2086: “int i”: 重定义
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(43): message : 参见“i”的声明
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(122,33): error C2143: 语法错误: 缺少“;”(在“++”的前面)
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(122,33): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(122,32): error C2086: “int i”: 重定义
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(43): message : 参见“i”的声明
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(122,35): error C2059: 语法错误:“)”
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(123,1): error C2143: 语法错误: 缺少“;”(在“{”的前面)
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(123,1): error C2447: “{”: 缺少函数标题(是否是老式的形式表?)
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(154,5): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(154,1): error C2040: “Y”:“int”与“double *”的间接寻址级别不同
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(154,25): error C2065: “countGrid”: 未声明的标识符
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(155,1): error C2059: 语法错误:“for”
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(155,1): error C2143: 语法错误: 缺少“)”(在“;”的前面)
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(155,15): error C2143: 语法错误: 缺少“;”(在“<”的前面)
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(155,15): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(155,13): error C2086: “int i”: 重定义
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(43): message : 参见“i”的声明
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(155,33): error C2143: 语法错误: 缺少“;”(在“++”的前面)
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(155,33): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(155,32): error C2086: “int i”: 重定义
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(43): message : 参见“i”的声明
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(155,35): error C2059: 语法错误:“)”
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(156,1): error C2143: 语法错误: 缺少“;”(在“{”的前面)
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(156,1): error C2447: “{”: 缺少函数标题(是否是老式的形式表?)
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(160,1): error C2059: 语法错误:“for”
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(160,1): error C2143: 语法错误: 缺少“)”(在“;”的前面)
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(160,15): error C2143: 语法错误: 缺少“;”(在“<”的前面)
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(160,15): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(160,13): error C2086: “int i”: 重定义
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(43): message : 参见“i”的声明
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(160,33): error C2143: 语法错误: 缺少“;”(在“++”的前面)
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(160,33): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(160,32): error C2086: “int i”: 重定义
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(43): message : 参见“i”的声明
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(160,35): error C2059: 语法错误:“)”
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(161,1): error C2143: 语法错误: 缺少“;”(在“{”的前面)
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(161,1): error C2447: “{”: 缺少函数标题(是否是老式的形式表?)
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(176,5): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(176,1): error C2040: “X”:“int”与“long double *”的间接寻址级别不同
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(176,30): error C2065: “countGrid”: 未声明的标识符
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(177,1): error C2059: 语法错误:“for”
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(177,1): error C2143: 语法错误: 缺少“)”(在“;”的前面)
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(177,15): error C2143: 语法错误: 缺少“;”(在“<”的前面)
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(177,15): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(177,13): error C2086: “int i”: 重定义
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(43): message : 参见“i”的声明
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(177,33): error C2143: 语法错误: 缺少“;”(在“++”的前面)
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(177,33): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(177,32): error C2086: “int i”: 重定义
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(43): message : 参见“i”的声明
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(177,35): error C2059: 语法错误:“)”
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(178,1): error C2143: 语法错误: 缺少“;”(在“{”的前面)
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(178,1): error C2447: “{”: 缺少函数标题(是否是老式的形式表?)
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(182,1): error C2059: 语法错误:“for”
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(182,1): error C2143: 语法错误: 缺少“)”(在“;”的前面)
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(182,31): error C2143: 语法错误: 缺少“;”(在“>=”的前面)
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(182,31): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(182,29): error C2086: “int i”: 重定义
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(43): message : 参见“i”的声明
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(182,38): error C2143: 语法错误: 缺少“;”(在“--”的前面)
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(182,38): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(182,37): error C2086: “int i”: 重定义
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(43): message : 参见“i”的声明
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(182,40): error C2059: 语法错误:“)”
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(183,1): error C2143: 语法错误: 缺少“;”(在“{”的前面)
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(183,1): error C2447: “{”: 缺少函数标题(是否是老式的形式表?)
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(212,5): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(212,1): error C2040: “D”:“int”与“double **”的间接寻址级别不同
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(212,26): error C2065: “countGrid”: 未声明的标识符
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(213,1): error C2059: 语法错误:“for”
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(213,1): error C2143: 语法错误: 缺少“)”(在“;”的前面)
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(213,15): error C2143: 语法错误: 缺少“;”(在“<”的前面)
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(213,15): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(213,13): error C2086: “int i”: 重定义
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(43): message : 参见“i”的声明
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(213,33): error C2143: 语法错误: 缺少“;”(在“++”的前面)
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(213,33): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(213,32): error C2086: “int i”: 重定义
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(43): message : 参见“i”的声明
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(213,35): error C2059: 语法错误:“)”
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(214,1): error C2143: 语法错误: 缺少“;”(在“{”的前面)
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(214,1): error C2447: “{”: 缺少函数标题(是否是老式的形式表?)
+C:\Users\liuyina\Desktop\Q4_xia\Q4_Program\Q4_Program.cpp(214,1): fatal error C1003: 错误计数超过 100；正在停止编译
+  正在生成代码...
