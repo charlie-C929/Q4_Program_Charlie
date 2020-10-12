@@ -1,3 +1,11 @@
+/*
+		作者：Charlie_Xia
+		程序作用：读入数据
+
+*/
+
+
+
 
 #include <iostream>
 #include <fstream>
@@ -8,32 +16,28 @@
 #include<stdlib.h>
 using namespace std;
 
-
+/*
+		读入节点坐标
+*/
 vector<vector<double>> readData_1()
 {
 	
-
-	/*
-		读入节点坐标
-	*/
 	string temp ,temp1;
 	double mindle = 0;
 	vector<vector<double>> a;
 	vector<double> b;
 	ifstream infile,infile1 ;
-	infile.open("C:\\Users\\liuyina\\Desktop\\Q4_xia\\nodes.txt", ios::in);
-	infile1.open("C:\\Users\\liuyina\\Desktop\\Q4_xia\\nodes.txt", ios::in);
+	infile.open(".\\nodes.txt", ios::in);    // 这里使用相对路径，以免每次都修改
+	infile1.open(".\\nodes.txt", ios::in);
 
 	if (!infile && !infile1)
 	{
 		cout << "fail to open file" << endl;
-		
 	}
 
 	infile1 >> temp1;
 	while (temp1 != "ENDDATA")
 	{
-
 		infile >> temp;
 		stringstream ss;
 		ss << temp;
@@ -60,21 +64,19 @@ vector<vector<double>> readData_1()
 }
 
 
-
+/*
+	读入载荷
+*/
 vector<vector<double>> readData_2()
 {
 
-
-	/*
-		读入应力
-	*/
 	string temp, temp1;
 	double mindle = 0;
 	vector<vector<double>> a;
 	vector<double> b;
 	ifstream infile, infile1;
-	infile.open("C:\\Users\\liuyina\\Desktop\\Q4_xia\\loads.txt", ios::in);
-	infile1.open("C:\\Users\\liuyina\\Desktop\\Q4_xia\\loads.txt", ios::in);
+	infile.open(".\\loads.txt", ios::in);			// 使用相对路径
+	infile1.open(".\\loads.txt", ios::in);
 
 	if (!infile && !infile1)
 	{
@@ -113,8 +115,9 @@ vector<vector<double>> readData_2()
 
 
 
-/*读入单元节点
-
+/*
+	
+	读入单元节点
 
 */
 vector<vector<double>> readData_3()
@@ -126,8 +129,8 @@ vector<vector<double>> readData_3()
 	vector<vector<double>> a;
 	vector<double> b;
 	ifstream infile, infile1;
-	infile.open("C:\\Users\\liuyina\\Desktop\\Q4_xia\\elements.txt", ios::in);
-	infile1.open("C:\\Users\\liuyina\\Desktop\\Q4_xia\\elements.txt", ios::in);
+	infile.open(".\\elements.txt", ios::in);
+	infile1.open(".\\elements.txt", ios::in);
 
 	if (!infile && !infile1)
 	{
@@ -181,30 +184,23 @@ vector<vector<double>> readData_3()
 }
 
 
-
+/*
+	读入边界条件
+*/
 vector<vector<double>> readData_4()
 {
 
-
-	/*
-		读入边界条件
-	*/
 	string temp, temp1;
 	double mindle = 0;
 	vector<vector<double>> a;
 	vector<double> b;
 	ifstream infile, infile1;
-	infile.open("C:\\Users\\liuyina\\Desktop\\Q4_xia\\bounds.txt", ios::in);
-	infile1.open("C:\\Users\\liuyina\\Desktop\\Q4_xia\\bounds.txt", ios::in);
+	infile.open(".\\bounds.txt", ios::in);
+	infile1.open(".\\bounds.txt", ios::in);
 
 	if (!infile && !infile1)
 	{
 		cout << "fail to open file" << endl;
-
-
-
-
-
 
 	}
 
