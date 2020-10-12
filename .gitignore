@@ -1,0 +1,5 @@
+##ignore this file##
+/x64/
+/Q4_Program/x64/
+/.vs/
+*.props
