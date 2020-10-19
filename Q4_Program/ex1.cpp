@@ -20,12 +20,6 @@
 using namespace std;
 
 
-
-
-
-
-
-
 void ex1()
 {
 	vector<vector<double>> nodes;			// 定义节点坐标数组
@@ -37,38 +31,31 @@ void ex1()
 	vector<vector<double>> bounds;			// 定义边界条件
 	bounds = readData_4();					// 
 
+	//		根据节点数定义总体刚度矩阵
+	//		初始化总体刚度矩阵
 
-	    //		根据节点数定义总体刚度矩阵
-		//		初始化总体刚度矩阵
+	vector<double> b(2 * nodes.size(),0);
+	vector<vector<double>> K(2 * nodes.size(),b);
 
+	// 清空b vector 并且回收内存
+	vector<double>().swap(b);
 
-	vector<vector<double>> K;
-	for (int i = 0; i < 2 * sizeof(nodes); i++)   //初始化
+	// 初始化单元刚度矩阵
+	for (int j = 0; j < 8; j++)
 	{
-		for (int j = 0; j < 2 * sizeof(nodes); j++)
-		{
-			K[i][j] = 0;
-		}
+		b.push_back(0);
 	}
-
-
-	//				求总体刚度矩阵
-
-
-
+	vector<vector<double>>Ke(8,b);
+	// 清空b vector 并且回收内存
+	vector<double>().swap(b);
 	
-	
-	vector<vector<double>>Ke;
 	for (int i = 0; i < sizeof(elements); i++)				//k个单元求k次单元刚度矩阵
 	{
-		for (int q = 0; q < 8; q++)
-		{
-			for (int w = 0; w < 8; w++)
-			{
-				vector<vector<double>> ke = ElementStiffness(30000000, 0.3, 1, nodes[elements[i][0] - 1][0], nodes[elements[i][0] - 1][1], nodes[elements[i][1] - 1][0], nodes[elements[i][1] - 1][1], nodes[elements[i][2] - 1][0], nodes[elements[i][2] - 1][1], nodes[elements[i][3] - 1][0], nodes[elements[i][3] - 1][1]);
-				Ke[q][w] = ke[q][w];
-			}
-		}
+		// 求单元刚度矩阵
+		Ke = ElementStiffness(30000000, 0.3, 1, nodes[elements[i][0] - 1][0], nodes[elements[i][0] - 1][1], 
+			nodes[elements[i][1] - 1][0], nodes[elements[i][1] - 1][1], nodes[elements[i][2] - 1][0], 
+			nodes[elements[i][2] - 1][1], nodes[elements[i][3] - 1][0], nodes[elements[i][3] - 1][1]);
+
 		//整合到总体刚度矩阵中
 		for (int j = 0; j < 4; j++)
 		{
@@ -81,8 +68,10 @@ void ex1()
 			}
 		}
 	}
-
-
+	// 查看刚度矩阵实际容量大小与当前实际包含的元素个数
+	cout << K.capacity() << " " <<K.size();
+	
+	/*
 	//引入边界条件，利用对角元素改1法对对整体刚度矩阵K和载荷阵做修正
 	for (int i = 0; i < sizeof(bounds); i++)
 	{
@@ -169,7 +158,7 @@ void ex1()
 
 		}
 	}
-
+	*/
 
 
 }
