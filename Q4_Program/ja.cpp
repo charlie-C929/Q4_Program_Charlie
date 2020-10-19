@@ -63,23 +63,24 @@ vector<vector<double>> Jacobi(double x1, double y1, double x2, double y2, double
 	//		单元坐标
 	double X[4] = { x1,x2,x3,x4 };
 	double Y[4] = { y1,y2,y3,y4 };
-	vector<vector<double>> J;					//		static
+	vector<vector<double>> J;
+
 	//		求形函数的导数
 
 	vector<double> Ns = DiffShape(s, t);
 
 
 	//		初始化雅可比矩阵
-	
+	vector<double> b;
 	for (int i = 0; i < 2; i++)
 	{
-		
-		for (int j = 0; j < 2; j++)
-		{
-			J[i][j] = 0;
-		}
-
+		b.push_back(0);
 	}
+	for (int i = 0; i < 2; i++)
+	{
+		J.push_back(b);
+	}
+
 
 	//求雅可比矩阵
 	double J1 = 0, J2 = 0, J3 = 0, J4 = 0;

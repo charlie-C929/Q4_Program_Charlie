@@ -153,15 +153,14 @@ vector<vector<double>> ElementStiffness(double E, double u, double h, double x1,
 	//				初始化单元刚度矩阵
 
 	vector<vector<double>> Ke;		//	创建一个二维向量
-
-	
-	for (int i = 0; i < 8; i++)    //初始化
+	vector<double> b;
+	for (int j = 0; j < 8; j++)
 	{
-		for (int j = 0; j < 8; j++)
-		{
-			Ke[i][j] = 0;
-		}
-
+		b.push_back(0);
+	}
+	for (int i = 0; i < 8; i++)   //初始化
+	{
+		Ke.push_back(b);
 	}
 
 	//				高斯积分
@@ -203,7 +202,7 @@ vector<vector<double>> ElementStiffness(double E, double u, double h, double x1,
 			}
 
 			//				求几何矩阵B及其转置矩阵
-			vector<vector<double>>bmatrix = BMatrix(x1, y1, x2, y2, x3, y3, x4, y4, x[a], x[b]);
+			vector<vector<double>> bmatrix = BMatrix(x1, y1, x2, y2, x3, y3, x4, y4, x[a], x[b]);
 			for (int s = 0; s < 3; s++)
 			{
 				for (int k = 0; k < 8; k++)

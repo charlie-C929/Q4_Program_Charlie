@@ -7,8 +7,7 @@ using namespace std;
 
 vector<vector<double>> BMatrix(double x1, double y1, double x2, double y2, double x3, double y3, double x4, double y4, double s, double t)
 {
-	vector<vector<double>> B;							//			static			
-	
+		
 	vector<double> Ns = DiffShape(s, t);
 	vector<vector<double>> J= Jacobi(x1, y1, x2, y2, x3, y3, x4, y4, s, t);
 	
@@ -23,16 +22,9 @@ vector<vector<double>> BMatrix(double x1, double y1, double x2, double y2, doubl
 
 	//		初始化几何矩阵
 	
-
-	for (int i = 0; i < 3; i++)
-	{
-		for (int j = 0; j < 8; j++)
-		{
-			B[i][j] = 0;
-		}
-	}
-
-
+	vector<double> b(8,0);
+	vector<vector<double>> B(3,b);
+	
 
 	//		求几何矩阵
 	//		B为3x8矩阵
@@ -52,10 +44,5 @@ vector<vector<double>> BMatrix(double x1, double y1, double x2, double y2, doubl
 		B[2][i + 1] = B[0][i];
 
 	}
-
-
 	return B;
-
-
-
 }
