@@ -114,14 +114,11 @@ void ex1()
 
 	vector<double> F(2 * nodes.size(), 0);
 
-	
-	for (int i = 0; i < 2 * sizeof(nodes)-1; i++)
+	for (int i = 0; i < nodes.size(); i++)
 	{
-		F[i] = loads[i / 2][0];
-		F[i + 1] = loads[i / 2][1];
+		F[2 * i] = loads[i][0];
+		F[2 * i + 1] = loads[i][1];
 	}
-	
-
 
 	//cout << F.capacity() << " " << F.size() << endl;
 	//用eigen求解方程
@@ -129,34 +126,21 @@ void ex1()
 	 MatrixXd Kmatrix(2 * nodes.size(), 2 * nodes.size());
 	 VectorXd Fmatrix(2 * nodes.size());
 
-
-
 	for (int j = 0; j < 2 * nodes.size(); j++)//共2 * sizeof(nodes)行
 	{
 		for (int i = 0; i < 2 * nodes.size(); i++)//共2 * sizeof(nodes)列 组成一行
 		{
 			Kmatrix(j,i) = K[j][i];
 		}
-	
 	}
-	
-
 
 	for (int i = 0; i < 2 * nodes.size(); i++)//共2 * sizeof(nodes)列 组成一行
 	{
 		Fmatrix(i) = F[i];
 	}
-	cout << Fmatrix << endl;
-	//cout << "Here is the matrix A:\n" << Kmatrix << endl;
-	//cout << "Here is the vector b:\n" << Fmatrix << endl;
+
 	VectorXd x = Kmatrix.colPivHouseholderQr().solve(Fmatrix);
-	
-
-
-	//VectorXd x = Kmatrix.colPivHouseholderQr().solve(Fmatrix);
 	cout << "The solution is:\n" << x << endl;
-
-
 
 	}
 
