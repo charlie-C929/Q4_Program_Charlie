@@ -17,7 +17,9 @@
 #include <string>
 #include <stdio.h>
 #include<stdlib.h>
+#include<Eigen\Dense>
 using namespace std;
+using namespace Eigen;
 
 
 void ex1()
@@ -36,7 +38,7 @@ void ex1()
 
 	vector<double> b(2 * nodes.size(),0);
 	vector<vector<double>> K(2 * nodes.size(),b);
-
+	
 	// 清空b vector 并且回收内存
 	vector<double>().swap(b);
 
@@ -69,14 +71,14 @@ void ex1()
 		}
 	}
 	// 查看刚度矩阵实际容量大小与当前实际包含的元素个数
-	cout << K.capacity() << " " <<K.size();
+	//cout << K.capacity() << " " << K.size() << endl;
 	
-	/*
+	
 	//引入边界条件，利用对角元素改1法对对整体刚度矩阵K和载荷阵做修正
-	for (int i = 0; i < sizeof(bounds); i++)
+	for (int i = 0; i < bounds.size(); i++)
 	{
 		if (bounds[i][0] == 0)
-			0;//不处理
+			;//不处理
 		else
 		{
 			K[2 * i][2 * i] = 1;
@@ -92,7 +94,7 @@ void ex1()
 				K[j][2*i] = 0;
 		}
 		if (bounds[i][1] == 0)
-			0;//不处理
+			;//不处理
 		else	
 		{
 			K[2 * i + 1][2 * i + 1] = 1;
@@ -110,58 +112,57 @@ void ex1()
 
 	}
 
+	vector<double> F(2 * nodes.size(), 0);
 
-
-	//解方程
 	
-	vector<int> F;
-	
-	for (int i = 0; i < 2 * sizeof(loads)-1; i=i+2)  //把二维向量loads转化为一维向量F，方便调用
+	for (int i = 0; i < 2 * sizeof(nodes)-1; i++)
 	{
 		F[i] = loads[i / 2][0];
-		F[i+1]= loads[i / 2][1];
+		F[i + 1] = loads[i / 2][1];
 	}
 	
-	double x[2 * sizeof(nodes)][2 * sizeof(nodes)];
-	for (int i = 0; i < 2 * sizeof(nodes); i++) 
-		x[0][i]=0;
-	
-	double e;
-	e = 0.02;
-	void cau();
+
+
+	//cout << F.capacity() << " " << F.size() << endl;
+	//用eigen求解方程
+
+	 MatrixXd Kmatrix(2 * nodes.size(), 2 * nodes.size());
+	 VectorXd Fmatrix(2 * nodes.size());
+
+
+
+	for (int j = 0; j < 2 * nodes.size(); j++)//共2 * sizeof(nodes)行
 	{
-
-		for (int k = 1; k <= 10; k++)
+		for (int i = 0; i < 2 * nodes.size(); i++)//共2 * sizeof(nodes)列 组成一行
 		{
-			for (int i = 0; i < 2 * sizeof(nodes); i++)
-			{
-				x[k][i] = 1.0 / K[i][i];
-				double re = F[i];
-				for (int j = 0; j < 2 * sizeof(nodes); j++)
-				{
-					if (j != i)
-						re -= K[i][j] * x[k - 1][j];
-				}
-				x[k][i] *= re;
-			}
-			for (int i = 0; i < 2 * sizeof(nodes); i++)
-			{
-				cout << x[k][i] << " ";
-				cout << endl;
-			}
-			bool judge = true;
-			for (int i = 0; i < 2 * sizeof(nodes); i++)
-				if (fabs(x[k - 1][i] - x[k][i]) > e) {
-					judge = false; break;
-				}
-			if (judge == true) return;
-
+			Kmatrix(j,i) = K[j][i];
 		}
+	
 	}
-	*/
+	
 
 
-}
+	for (int i = 0; i < 2 * nodes.size(); i++)//共2 * sizeof(nodes)列 组成一行
+	{
+		Fmatrix(i) = F[i];
+	}
+	cout << Fmatrix << endl;
+	//cout << "Here is the matrix A:\n" << Kmatrix << endl;
+	//cout << "Here is the vector b:\n" << Fmatrix << endl;
+	VectorXd x = Kmatrix.colPivHouseholderQr().solve(Fmatrix);
+	
+
+
+	//VectorXd x = Kmatrix.colPivHouseholderQr().solve(Fmatrix);
+	cout << "The solution is:\n" << x << endl;
+
+
+
+	}
+
+
+
+
 
 
 
