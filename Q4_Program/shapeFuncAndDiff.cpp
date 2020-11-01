@@ -34,7 +34,6 @@ vector<double> DiffShape(double s, double t)			//s,t是局部坐标
 	{
 		Ns.push_back(0);
 	}
-		
 	Ns[0] = -(1 - t) / 4;	//  N1对s求导
 	Ns[1] = (1 - t) / 4;	//  N2对s求导
 	Ns[2] = (1 + t) / 4;	//  N3对s求导
