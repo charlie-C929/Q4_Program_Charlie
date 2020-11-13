@@ -12,7 +12,7 @@
 #include "shapeFuncAndDiff.hpp"
 using namespace std;
 
-vector<double> shapeFunc(double s, double t)//声明了指针函数shapeFunc,指针储存的是函数的首地址
+vector<double> shapeFunc(double s, double t)//
 {
 	vector<double> N;
 	for (int i = 0; i < 4; i++)//初始化
@@ -29,12 +29,11 @@ vector<double> shapeFunc(double s, double t)//声明了指针函数shapeFunc,指针储存的
 
 vector<double> DiffShape(double s, double t)			//s,t是局部坐标
 {
-    vector<double> Ns;			//	
+    vector<double> Ns;			
 	for (int i = 0; i < 8; i++)//初始化
 	{
 		Ns.push_back(0);
 	}
-		
 	Ns[0] = -(1 - t) / 4;	//  N1对s求导
 	Ns[1] = (1 - t) / 4;	//  N2对s求导
 	Ns[2] = (1 + t) / 4;	//  N3对s求导
