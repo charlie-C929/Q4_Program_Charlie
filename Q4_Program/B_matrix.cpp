@@ -16,7 +16,7 @@ vector<vector<double>> BMatrix(double x1, double y1, double x2, double y2, doubl
 
 	double detJ = 0;
 	detJ = J[0][0] * J[1][1] - J[1][0] * J[0][1];
-	//cout<<(detJ = J[0][0] * J[1][1] - J[1][0] * J[0][1])<<endl; //²âÊÔ
+	
 
 
 
@@ -42,7 +42,6 @@ vector<vector<double>> BMatrix(double x1, double y1, double x2, double y2, doubl
 	{
 		B[2][i] = B[1][i + 1];
 		B[2][i + 1] = B[0][i];
-
 	}
 	return B;
 }

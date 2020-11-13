@@ -8,12 +8,12 @@
 #include <vector>
 #include "Elemstiffness.hpp"
 #include "readData.hpp"
+#include"B_matrix.hpp"
 #include <cmath>
 #include <numeric>
 #include<math.h>
 #include <fstream>
 #include <sstream>
-#include <vector>
 #include <string>
 #include <stdio.h>
 #include<stdlib.h>
@@ -53,8 +53,8 @@ void ex1()
 
 	for (int i = 0; i < elements.size(); i++)				//k个单元求k次单元刚度矩阵
 	{
-		// 求单元刚度矩阵, 这没有问题
-		Ke = ElementStiffness(30000000, 0.3, 1, nodes[elements[i][0] - 1][0], nodes[elements[i][0] - 1][1],
+
+		Ke = ElementStiffness(166667, 0.3, 1, nodes[elements[i][0] - 1][0], nodes[elements[i][0] - 1][1],
 			nodes[elements[i][1] - 1][0], nodes[elements[i][1] - 1][1], nodes[elements[i][2] - 1][0],
 			nodes[elements[i][2] - 1][1], nodes[elements[i][3] - 1][0], nodes[elements[i][3] - 1][1]);
 
@@ -71,8 +71,7 @@ void ex1()
 		}
 	}
 
-	// 查看刚度矩阵实际容量大小与当前实际包含的元素个数
-	//cout << K.capacity() << " " << K.size() << endl;
+
 
 
 //引入边界条件，利用对角元素改1法对对整体刚度矩阵K和载荷阵做修正
@@ -114,7 +113,21 @@ void ex1()
 
 	}
 
-      
+ // //测试
+	//for (int i = 0; i < 2 * nodes.size(); i++)
+	//{
+	//	for (int j = 0; j < 2 * nodes.size(); j++)
+	//	{
+	//		cout << K[i][j] << "   "  ;
+	//	}
+	//	cout<<endl;
+	//}
+
+
+
+
+
+
 	vector<double> F(2 * nodes.size(), 0);
 
 	for (int i = 0; i < nodes.size(); i++)    //把两列化为一列
@@ -123,10 +136,7 @@ void ex1()
 		F[2 * i + 1] = loads[i][1];
 		
 	}
-	//for (int i = 0; i < 2 * nodes.size(); i++)
-	//{
-	//	cout << F[i] << endl;
-	//}
+	
 
 
 	//用eigen求解方程
@@ -146,28 +156,70 @@ void ex1()
 		Fmatrix(i) = F[i];
 	}
 
-	// QR 分解
+	// QR 分解求出位移向量x
 	VectorXd x = Kmatrix.colPivHouseholderQr().solve(Fmatrix);
 
 
 
+
+	//把位移向量化为n乘2的矩阵，方便输出
 	vector<double> s(2, 0);
-	vector<vector<double>> X( nodes.size(), s);
-
-	// 清空b vector 并且回收内存
+	vector<vector<double>> X(nodes.size(), s);
+	// 清空s vector 并且回收内存
 	vector<double>().swap(s);
-
-
 	for (int i = 0; i < 2 * nodes.size(); i = i + 2)    //把一列化为两列
 	{
-		X[i/2][0] = x(i);
-		X[i/2][1] = x(i + 1);
+		X[i / 2][0] = x(i);
+		X[i / 2][1] = x(i + 1);
 	}
 
 
+
+	//测试
 	for (int i = 0; i < nodes.size(); i++)
 	{
-			cout  <<nodes[i][0]<<"  "<<nodes[i][1]<<"  "<< X[i][0] << "   " <<X[i][1]<< endl;
+		cout << nodes[i][0] << "  " << nodes[i][1] << "  " << X[i][0] << "   " << X[i][1] << endl;
+	}
+
+
+
+	//求出应力
+	vector<double> stress_x(nodes.size(), 0);
+	vector<double> stress_y(nodes.size(), 0);
+	vector<double> stress_xy(nodes.size(), 0);
+
+	double E = 166667, u = 0.3;
+	double D[3][3] = { E / (1 - u * u) ,E * u / (1 - u * u) , 0, E * u / (1 - u * u) ,E / (1 - u * u) , 0, 0, 0,(1 - u) * E / (2 * (1 - u * u)) };
+	double f[2] = { -0.577350 , 0.577350 };	//假设需要两个高斯积分点，查询高斯积分表得到两个高斯点的函数值
+	for (int i = 0; i < elements.size(); i++)
+	{
+		vector<vector<double>> bmatrix = BMatrix(nodes[elements[i][0]-1][0], nodes[elements[i][0]-1][1] , nodes[elements[i][1]-1][0], nodes[elements[i][1]-1][1], nodes[elements[i][2]-1][0], nodes[elements[i][2]-1][1], nodes[elements[i][3]-1][0], nodes[elements[i][3]-1][1], f[0], f[1]);
+		for (int j = 0; j < 4; j++)
+		{
+			double BX[3];
+			BX[0] = bmatrix[0][2 * j] * X[elements[i][j] - 1][0] + bmatrix[0][2 * j + 1] * X[elements[i][j] - 1][1];
+			BX[1]= bmatrix[1][2 * j] * X[elements[i][j] - 1][0] + bmatrix[1][2 * j + 1] * X[elements[i][j] - 1][1];
+			BX[2]=bmatrix[2][2 * j] * X[elements[i][j] - 1][0] + bmatrix[2][2 * j + 1] * X[elements[i][j] - 1][1];
+			stress_x[elements[i][j] - 1] = D[0][0] * BX[0] + D[0][1] * BX[1] + D[0][2] * BX[2];
+			stress_y[elements[i][j] - 1] = D[1][0] * BX[0] + D[1][1] * BX[1] + D[1][2] * BX[2];
+			stress_xy[elements[i][j] - 1] = D[2][0] * BX[0] + D[2][1] * BX[1] + D[2][2] * BX[2];
+		}
+
+	}
+
+	
+
+
+
+
+
+
+	
+
+	//输出结果
+	for (int i = 0; i < nodes.size(); i++)
+	{
+		cout << nodes[i][0] << "  " << nodes[i][1] << "  " << X[i][0] << "   " << X[i][1] << "  " << stress_x[i] << "   " << stress_y[i] << "  " << stress_xy[i] << endl;
 	}
 	
 	

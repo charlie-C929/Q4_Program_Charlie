@@ -40,6 +40,9 @@
     <ClCompile Include="Elemstiffness.cpp">
       <Filter>源文件\general</Filter>
     </ClCompile>
+    <ClCompile Include="newRead.cpp">
+      <Filter>readDataAndOutput</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ex1.hpp">
@@ -59,6 +62,9 @@
     </ClInclude>
     <ClInclude Include="Elemstiffness.hpp">
       <Filter>源文件\general</Filter>
+    </ClInclude>
+    <ClInclude Include="newRead.hpp">
+      <Filter>readDataAndOutput</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
