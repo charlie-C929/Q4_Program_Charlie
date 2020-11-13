@@ -4,8 +4,4 @@
 #include<string>
 using namespace std;
 // ÉùÃ÷
-struct data
-{
-	vector<string> nodes;
-};
 
