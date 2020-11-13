@@ -10,7 +10,7 @@
 #include<string>
 #include<stdio.h>
 #include "ex1.hpp"
-#include "newRead.cpp"
+#include "newRead.hpp"
 
 using namespace std;
 
@@ -19,7 +19,7 @@ int main(int argc, char* argv[])
     
     dataX_r d;
     //ex1();
-    //d = node();
+    d = node();
     
     return 0;
 

@@ -8,12 +8,7 @@
 #include "newRead.hpp"
 
 using namespace std;
-struct dataX_r {
-    vector<vector<double>> nodes;
-    vector<double> elements;
-    vector<double> loads;
-    vector<double> bounds;
-};
+
 
 //第一个函数取节点坐标
 struct dataX_r node()
@@ -52,20 +47,20 @@ struct dataX_r node()
             }
         }
     }
-  
-   //初始化nodes
+
+    //初始化nodes
     vector<double> b(2, 0);
     for (int i = 0; i < tempnodes.size(); i++)
     {
         c.nodes.push_back(b);
     }
-    
+
     //把节点坐标的字符串变成数字
-    for (int i =0; i < tempnodes.size(); i++)
+    for (int i = 0; i < tempnodes.size(); i++)
     {
-       string temp = tempnodes[i];
+        string temp = tempnodes[i];
         string x = temp.substr(9, 15);
-        string y=temp.substr(25, 15);
+        string y = temp.substr(25, 15);
         c.nodes[i][0] = stod(x);
         c.nodes[i][1] = stod(y);
         cout << c.nodes[i][0] << endl;
