@@ -172,12 +172,6 @@
     <ClInclude Include="readData.hpp" />
     <ClInclude Include="shapeFuncAndDiff.hpp" />
   </ItemGroup>
-  <ItemGroup>
-    <Text Include="bounds.txt" />
-    <Text Include="elements.txt" />
-    <Text Include="loads.txt" />
-    <Text Include="nodes.txt" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

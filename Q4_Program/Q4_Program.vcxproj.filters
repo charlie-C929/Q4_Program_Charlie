@@ -14,9 +14,6 @@
     <Filter Include="readDataAndOutput">
       <UniqueIdentifier>{2e388c2f-799a-4f43-b6e5-0fa6ebe283c8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="input">
-      <UniqueIdentifier>{c966a16b-44aa-420a-9d87-65c9d158c7e6}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Q4_Program.cpp">
@@ -66,19 +63,5 @@
     <ClInclude Include="newRead.hpp">
       <Filter>readDataAndOutput</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="bounds.txt">
-      <Filter>input</Filter>
-    </Text>
-    <Text Include="elements.txt">
-      <Filter>input</Filter>
-    </Text>
-    <Text Include="loads.txt">
-      <Filter>input</Filter>
-    </Text>
-    <Text Include="nodes.txt">
-      <Filter>input</Filter>
-    </Text>
   </ItemGroup>
 </Project>
