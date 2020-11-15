@@ -160,7 +160,6 @@
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">E:\Program Files (x86)\eigen</AdditionalIncludeDirectories>
     </ClCompile>
     <ClCompile Include="ex1.cpp" />
-    <ClCompile Include="readData.cpp" />
     <ClCompile Include="shapeFuncAndDiff.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -169,7 +168,6 @@
     <ClInclude Include="ex1.hpp" />
     <ClInclude Include="ja.hpp" />
     <ClInclude Include="newRead.hpp" />
-    <ClInclude Include="readData.hpp" />
     <ClInclude Include="shapeFuncAndDiff.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

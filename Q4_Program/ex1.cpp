@@ -201,11 +201,10 @@ void ex1()
 
 	
 	ofstream outFile;//创建了一个ofstream 对象
-	outFile.open("finalresult.dat");//outFile 与一个文本文件关联
+	outFile.open("myresult.dat");//outFile 与一个文本文件关联
 		// cout 控制台输出前面输入的信息
 
 	cout << fixed;
-
 	cout.setf(ios_base::showpoint);
 	cout << "TITLE = 'RESULT'"<< endl;
 	cout << "VARIABLES = 'X','Y','Z','xstrain', 'ystrain', 'xStress', 'yStress', 'xyStress'"<< endl;

@@ -25,9 +25,6 @@
     <ClCompile Include="shapeFuncAndDiff.cpp">
       <Filter>源文件\general</Filter>
     </ClCompile>
-    <ClCompile Include="readData.cpp">
-      <Filter>readDataAndOutput</Filter>
-    </ClCompile>
     <ClCompile Include="ja.cpp">
       <Filter>源文件\general</Filter>
     </ClCompile>
@@ -47,9 +44,6 @@
     </ClInclude>
     <ClInclude Include="shapeFuncAndDiff.hpp">
       <Filter>源文件\general</Filter>
-    </ClInclude>
-    <ClInclude Include="readData.hpp">
-      <Filter>readDataAndOutput</Filter>
     </ClInclude>
     <ClInclude Include="ja.hpp">
       <Filter>源文件\general</Filter>

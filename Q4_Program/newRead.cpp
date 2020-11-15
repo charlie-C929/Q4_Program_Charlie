@@ -18,7 +18,7 @@ struct dataX_r node()
     vector<string> A;
     string a;
     ifstream infile;
-    infile.open(".\\mesh.k", ios::in);
+    infile.open(".\\mesh2.k", ios::in);
     if (!infile)
     {
         cout << "fail to open file" << endl;
@@ -65,6 +65,12 @@ struct dataX_r node()
         c.nodes[i][1] = stod(y);
     }
 
+
+
+   
+
+
+
     //获取每个单元的节点序号
     //取每个单元的节点序号
     vector<string> tempelements;
@@ -94,16 +100,20 @@ struct dataX_r node()
     for (int i = 0; i < tempelements.size(); i++)
     {
         string temp = tempelements[i];
-        string n1 = temp.substr(21, 3);
-        string n2 = temp.substr(29, 3);
-        string n3 = temp.substr(37, 3);
-        string n4 = temp.substr(45, 3);
+        string n1 = temp.substr(17, 7);
+        string n2 = temp.substr(25, 7);
+        string n3 = temp.substr(33, 7);
+        string n4 = temp.substr(41, 7);
         c.elements[i][0] = stod(n1);
         c.elements[i][1] = stod(n2);
         c.elements[i][2] = stod(n3);
         c.elements[i][3] = stod(n4);
-        /*cout << c.elements[i][0] << "  " << c.elements[i][1] << "  " << c.elements[i][2] << "  " << c.elements[i][3] << endl;*/
+       /* cout << c.elements[i][0] << "  " << c.elements[i][1] << "  " << c.elements[i][2] << "  " << c.elements[i][3] << endl;*/
     }
+
+
+
+
 
    
     //获取施加的外力
@@ -123,6 +133,12 @@ struct dataX_r node()
         }
     }
 
+   /* for (int i = 0; i < temploads.size(); i++)
+    {
+        cout << temploads[i] << endl;
+    }*/
+
+
     //初始化loads
     vector<double> b2(2, 0);
     for (int i = 0; i < c.nodes.size(); i++)
@@ -130,20 +146,22 @@ struct dataX_r node()
         c.loads.push_back(b2);
     }
 
+
+
     //把loads字符串变成数字
-    for (int i = 2; i < temploads.size(); i++)
+    for (int i =0; i < temploads.size(); i++)
     {
         string temp = temploads[i];
-        string n = temp.substr(7, 3);
-        string x = temp.substr(36, 4);
-        string y = temp.substr(49, 1);
+        string n = temp.substr(5, 5);
+        string x = temp.substr(32, 9);
+        string y = temp.substr(42, 9);
         int num = stoi(n);
         c.loads[num-1][0] = stod(x);
         c.loads[num-1][1] = stod(y);
        
     }
 
-    /*for (int i = 0; i < c.loads.size(); i++)
+   /* for (int i = 0; i < c.loads.size(); i++)
     {
         cout << c.loads[i][0] << "  " << c.loads[i][1] << endl;
     }*/
@@ -177,10 +195,10 @@ struct dataX_r node()
 
  
     //把bounds字符串变成数字
-    for (int i = 2; i < tempbounds.size(); i++)
+    for (int i =0; i < tempbounds.size(); i++)
     {
         string temp = tempbounds[i];
-        string n = temp.substr(7, 3);
+        string n = temp.substr(5, 5);
         string x = temp.substr(29, 1);
         string y = temp.substr(39, 1);
         int num = stoi(n);
@@ -191,7 +209,10 @@ struct dataX_r node()
 
     }
 
-   
+   /*  for (int i = 0; i < c.bounds.size(); i++)
+     {
+         cout << c.bounds[i][0] << "  " << c.bounds[i][1] << endl;
+     }*/
 
     return c;
 }

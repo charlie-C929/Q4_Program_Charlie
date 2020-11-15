@@ -19,7 +19,8 @@ int main(int argc, char* argv[])
 {
     ex1();
 
-    
+  /*  dataX_r d;
+    d=node();*/
     return 0;
 
 }
