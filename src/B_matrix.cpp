@@ -12,7 +12,7 @@ vector<vector<double>> BMatrix(double x1, double y1, double x2, double y2, doubl
 	vector<vector<double>> J= Jacobi(x1, y1, x2, y2, x3, y3, x4, y4, s, t);
 	
 
-	//			ÇóÑÅ¿É±È¾ØÕóĞĞÁĞÊ½
+	//			æ±‚é›…å¯æ¯”çŸ©é˜µè¡Œåˆ—å¼
 
 	double detJ = 0;
 	detJ = J[0][0] * J[1][1] - J[1][0] * J[0][1];
@@ -20,14 +20,14 @@ vector<vector<double>> BMatrix(double x1, double y1, double x2, double y2, doubl
 
 
 
-	//		³õÊ¼»¯¼¸ºÎ¾ØÕó
+	//		åˆå§‹åŒ–å‡ ä½•çŸ©é˜µ
 	
 	vector<double> b(8,0);
 	vector<vector<double>> B(3,b);
 	
 
-	//		Çó¼¸ºÎ¾ØÕó
-	//		BÎª3x8¾ØÕó
+	//		æ±‚å‡ ä½•çŸ©é˜µ
+	//		Bä¸º3x8çŸ©é˜µ
 
 	B[0][0] = (J[1][1] * Ns[0] - J[0][1] * Ns[4]) / detJ;
 	B[0][2] = (J[1][1] * Ns[1] - J[0][1] * Ns[5]) / detJ;

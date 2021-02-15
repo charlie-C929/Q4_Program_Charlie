@@ -1,26 +1,23 @@
-//¼ÆËãÑÅ¿Ë±È¾ØÕó
+//è®¡ç®—é›…å…‹æ¯”çŸ©é˜µ
 #include <iostream>
 #include <stdlib.h>
 #include "shapeFuncAndDiff.hpp"
 #include <vector>
 using namespace std;
 
-
-
-
 vector<vector<double>> Jacobi(double x1, double y1, double x2, double y2, double x3, double y3, double x4, double y4, double s, double t)
 {
-	//		µ¥Ôª×ø±ê
+	//		å•å…ƒåæ ‡
 	double X[4] = { x1,x2,x3,x4 };
 	double Y[4] = { y1,y2,y3,y4 };
 	vector<vector<double>> J;
 
-	//		ÇóĞÎº¯ÊıµÄµ¼Êı
+	//		æ±‚å½¢å‡½æ•°çš„å¯¼æ•°
 
 	vector<double> Ns = DiffShape(s, t);
 
 
-	//		³õÊ¼»¯ÑÅ¿É±È¾ØÕó
+	//		åˆå§‹åŒ–é›…å¯æ¯”çŸ©é˜µ
 	vector<double> b;
 	for (int i = 0; i < 2; i++)
 	{
@@ -32,7 +29,7 @@ vector<vector<double>> Jacobi(double x1, double y1, double x2, double y2, double
 	}
 
 
-	//ÇóÑÅ¿É±È¾ØÕó
+	//æ±‚é›…å¯æ¯”çŸ©é˜µ
 	double J1 = 0, J2 = 0, J3 = 0, J4 = 0;
 	for (int i = 0; i < 4; i++)
 	{
