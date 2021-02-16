@@ -1,4 +1,4 @@
-#pragma once
+
 #include<iostream>
 #include<fstream>
 #include<sstream>
@@ -10,29 +10,33 @@
 using namespace std;
 
 
-//µÚÒ»¸öº¯ÊıÈ¡½Úµã×ø±ê
+//ç¬¬ä¸€ä¸ªå‡½æ•°å–èŠ‚ç‚¹åæ ‡
 struct dataX_r node()
 {
     dataX_r c;
-    //Ê×ÏÈ°ÑËùÓĞ×Ö·û¶¼ÊäÈëµ½×Ö·û´®AÖĞ
+    //é¦–å…ˆæŠŠæ‰€æœ‰å­—ç¬¦éƒ½è¾“å…¥åˆ°å­—ç¬¦ä¸²Aä¸­
     vector<string> A;
     string a;
     ifstream infile;
-    infile.open(".\\mesh2.k", ios::in);
+    infile.open("mesh.k", ios::in);
     if (!infile)
     {
         cout << "fail to open file" << endl;
     }
+    else
+    {
+        cout << "Open file success" << endl;
+    }
     int i = 0;
-    while (getline(infile, a))     //kÎÄ¼şÖĞµÄËùÓĞ×Ö·û£¨°üÀ¨¿Õ×Ö·û£©¶¼ÒÑ¾­¸¶¸øÁËA
+    while (getline(infile, a))     //kæ–‡ä»¶ä¸­çš„æ‰€æœ‰å­—ç¬¦ï¼ˆåŒ…æ‹¬ç©ºå­—ç¬¦ï¼‰éƒ½å·²ç»ä»˜ç»™äº†A
     {
         A.push_back(a);
     }
 
 
 
-    //»ñÈ¡½Úµã×ø±ê
-    //ÏÈ°Ñ½Úµã×ø±êµÄ×Ö·û´®µ¼Èë
+    //è·å–èŠ‚ç‚¹åæ ‡
+    //å…ˆæŠŠèŠ‚ç‚¹åæ ‡çš„å­—ç¬¦ä¸²å¯¼å…¥
     vector<string> tempnodes;
     for (int i = 0; i < A.size(); i++)
     {
@@ -48,14 +52,14 @@ struct dataX_r node()
         }
     }
   
-   //³õÊ¼»¯nodes
+   //åˆå§‹åŒ–nodes
     vector<double> b(2, 0);
     for (int i = 0; i < tempnodes.size(); i++)
     {
         c.nodes.push_back(b);
     }
     
-    //°Ñ½Úµã×ø±êµÄ×Ö·û´®±ä³ÉÊı×Ö
+    //æŠŠèŠ‚ç‚¹åæ ‡çš„å­—ç¬¦ä¸²å˜æˆæ•°å­—
     for (int i =0; i < tempnodes.size(); i++)
     {
        string temp = tempnodes[i];
@@ -71,8 +75,8 @@ struct dataX_r node()
 
 
 
-    //»ñÈ¡Ã¿¸öµ¥ÔªµÄ½ÚµãĞòºÅ
-    //È¡Ã¿¸öµ¥ÔªµÄ½ÚµãĞòºÅ
+    //è·å–æ¯ä¸ªå•å…ƒçš„èŠ‚ç‚¹åºå·
+    //å–æ¯ä¸ªå•å…ƒçš„èŠ‚ç‚¹åºå·
     vector<string> tempelements;
     for (int i = 0; i < A.size(); i++)
     {
@@ -89,14 +93,14 @@ struct dataX_r node()
     }
    
 
-    //³õÊ¼»¯elements
+    //åˆå§‹åŒ–elements
     vector<double> b1(4, 0);
     for (int i = 0; i < tempelements.size(); i++)
     {
         c.elements.push_back(b1);
     }
 
-    //°Ñµ¥Ôª½ÚµãĞòºÅµÄ×Ö·û´®±ä³ÉÊı×Ö
+    //æŠŠå•å…ƒèŠ‚ç‚¹åºå·çš„å­—ç¬¦ä¸²å˜æˆæ•°å­—
     for (int i = 0; i < tempelements.size(); i++)
     {
         string temp = tempelements[i];
@@ -116,7 +120,7 @@ struct dataX_r node()
 
 
    
-    //»ñÈ¡Ê©¼ÓµÄÍâÁ¦
+    //è·å–æ–½åŠ çš„å¤–åŠ›
 
     vector<string> temploads;
     for (int i = 0; i < A.size(); i++)
@@ -139,7 +143,7 @@ struct dataX_r node()
     }*/
 
 
-    //³õÊ¼»¯loads
+    //åˆå§‹åŒ–loads
     vector<double> b2(2, 0);
     for (int i = 0; i < c.nodes.size(); i++)
     {
@@ -148,7 +152,7 @@ struct dataX_r node()
 
 
 
-    //°Ñloads×Ö·û´®±ä³ÉÊı×Ö
+    //æŠŠloadså­—ç¬¦ä¸²å˜æˆæ•°å­—
     for (int i =0; i < temploads.size(); i++)
     {
         string temp = temploads[i];
@@ -168,7 +172,7 @@ struct dataX_r node()
     
 
 
-    //»ñÈ¡±ß½çÌõ¼ş
+    //è·å–è¾¹ç•Œæ¡ä»¶
 
     vector<string> tempbounds;
     for (int i = 0; i < A.size(); i++)
@@ -186,7 +190,7 @@ struct dataX_r node()
     }
 
 
-    //³õÊ¼»¯bounds
+    //åˆå§‹åŒ–bounds
     vector<double> b3(2, 0);
     for (int i = 0; i < c.nodes.size(); i++)
     {
@@ -194,7 +198,7 @@ struct dataX_r node()
     }
 
  
-    //°Ñbounds×Ö·û´®±ä³ÉÊı×Ö
+    //æŠŠboundså­—ç¬¦ä¸²å˜æˆæ•°å­—
     for (int i =0; i < tempbounds.size(); i++)
     {
         string temp = tempbounds[i];

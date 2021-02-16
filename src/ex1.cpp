@@ -1,6 +1,6 @@
 /*
-		×÷Õß£ºCharlie_Xia
-		¹¦ÄÜ£º¼òµ¥µÄÓĞÏŞÔªËãÀı
+		ä½œè€…ï¼šCharlie_Xia
+		åŠŸèƒ½ï¼šç®€å•çš„æœ‰é™å…ƒç®—ä¾‹
 
 */
 
@@ -17,7 +17,7 @@
 #include <string>
 #include <stdio.h>
 #include<stdlib.h>
-#include<Eigen\Dense>
+#include<Eigen/Dense>
 using namespace std;
 using namespace Eigen;
 
@@ -29,32 +29,32 @@ void ex1()
 	d = node();
 	
 
-	//		¸ù¾İ½ÚµãÊı¶¨Òå×ÜÌå¸Õ¶È¾ØÕó
-	//		³õÊ¼»¯×ÜÌå¸Õ¶È¾ØÕó
+	//		æ ¹æ®èŠ‚ç‚¹æ•°å®šä¹‰æ€»ä½“åˆšåº¦çŸ©é˜µ
+	//		åˆå§‹åŒ–æ€»ä½“åˆšåº¦çŸ©é˜µ
 
 	vector<double> b(2 * d.nodes.size(), 0);
 	vector<vector<double>> K(2 * d.nodes.size(), b);
 
-	// Çå¿Õb vector ²¢ÇÒ»ØÊÕÄÚ´æ
+	// æ¸…ç©ºb vector å¹¶ä¸”å›æ”¶å†…å­˜
 	vector<double>().swap(b);
 
-	// ³õÊ¼»¯µ¥Ôª¸Õ¶È¾ØÕó
+	// åˆå§‹åŒ–å•å…ƒåˆšåº¦çŸ©é˜µ
 	for (int j = 0; j < 8; j++)
 	{
 		b.push_back(0);
 	}
 	vector<vector<double>>Ke(8, b);
-	// Çå¿Õb vector ²¢ÇÒ»ØÊÕÄÚ´æ
+	// æ¸…ç©ºb vector å¹¶ä¸”å›æ”¶å†…å­˜
 	vector<double>().swap(b);
 
-	for (int i = 0; i < d.elements.size(); i++)				//k¸öµ¥ÔªÇók´Îµ¥Ôª¸Õ¶È¾ØÕó
+	for (int i = 0; i < d.elements.size(); i++)				//kä¸ªå•å…ƒæ±‚kæ¬¡å•å…ƒåˆšåº¦çŸ©é˜µ
 	{
 
 		Ke = ElementStiffness(166667, 0.3, 1, d.nodes[d.elements[i][0] - 1][0], d.nodes[d.elements[i][0] - 1][1],
 			d.nodes[d.elements[i][1] - 1][0], d.nodes[d.elements[i][1] - 1][1], d.nodes[d.elements[i][2] - 1][0],
 			d.nodes[d.elements[i][2] - 1][1], d.nodes[d.elements[i][3] - 1][0], d.nodes[d.elements[i][3] - 1][1]);
 
-		//ÕûºÏµ½×ÜÌå¸Õ¶È¾ØÕóÖĞ
+		//æ•´åˆåˆ°æ€»ä½“åˆšåº¦çŸ©é˜µä¸­
 		for (int j = 0; j < 4; j++)
 		{
 			for (int p = 0; p < 4; p++)
@@ -68,18 +68,18 @@ void ex1()
 	}
 
 
+	cout << "Stiffness calculate complete" << endl;
 
-
-//ÒıÈë±ß½çÌõ¼ş£¬ÀûÓÃ¶Ô½ÇÔªËØ¸Ä1·¨¶Ô¶ÔÕûÌå¸Õ¶È¾ØÕóKºÍÔØºÉÕó×öĞŞÕı
+//å¼•å…¥è¾¹ç•Œæ¡ä»¶ï¼Œåˆ©ç”¨å¯¹è§’å…ƒç´ æ”¹1æ³•å¯¹å¯¹æ•´ä½“åˆšåº¦çŸ©é˜µKå’Œè½½è·é˜µåšä¿®æ­£
 	for (int i = 0; i < d.bounds.size(); i++)
 	{
 		if (d.bounds[i][0] == 0)
-			;//²»´¦Àí
+			;//ä¸å¤„ç†
 		else
 		{
 			K[2 * i][2 * i] = 1;
 			d.loads[i][0] = 0;
-			// Ò»ÕûĞĞÖÃ0
+			// ä¸€æ•´è¡Œç½®0
 			for (int j = 0; j < 2 * i; j++)
 				K[2 * i][j] = 0;
 			for (int j = 2 * i + 1; j < 2 * d.bounds.size(); j++)
@@ -91,7 +91,7 @@ void ex1()
 				K[j][2 * i] = 0;
 		}
 		if (d.bounds[i][1] == 0)
-			;//²»´¦Àí
+			;//ä¸å¤„ç†
 		else
 		{
 			K[2 * i + 1][2 * i + 1] = 1;
@@ -109,7 +109,7 @@ void ex1()
 
 	}
 
- // //²âÊÔ
+ // //æµ‹è¯•
 	//for (int i = 0; i < 2 * nodes.size(); i++)
 	//{
 	//	for (int j = 0; j < 2 * nodes.size(); j++)
@@ -126,63 +126,54 @@ void ex1()
 
 	vector<double> F(2 * d.nodes.size(), 0);
 
-	for (int i = 0; i < d.nodes.size(); i++)    //°ÑÁ½ÁĞ»¯ÎªÒ»ÁĞ
+	for (int i = 0; i < d.nodes.size(); i++)    //æŠŠä¸¤åˆ—åŒ–ä¸ºä¸€åˆ—
 	{
 		F[2 * i] = d.loads[i][0];
 		F[2 * i + 1] = d.loads[i][1];
 		
 	}
-	
 
+	cout << "Use eigen to solve equation" << endl;
 
-	//ÓÃeigenÇó½â·½³Ì
+	//ç”¨eigenæ±‚è§£æ–¹ç¨‹
 	 MatrixXd Kmatrix(2 * d.nodes.size(), 2 * d.nodes.size());
 	 VectorXd Fmatrix(2 * d.nodes.size());
 
-	for (int j = 0; j < 2 * d.nodes.size(); j++)//¹²2 * sizeof(nodes)ĞĞ
+	for (int j = 0; j < 2 * d.nodes.size(); j++)//å…±2 * sizeof(nodes)è¡Œ
 	{
-		for (int i = 0; i < 2 * d.nodes.size(); i++)//¹²2 * sizeof(nodes)ÁĞ ×é³ÉÒ»ĞĞ
+		for (int i = 0; i < 2 * d.nodes.size(); i++)//å…±2 * sizeof(nodes)åˆ— ç»„æˆä¸€è¡Œ
 		{
 			Kmatrix(j,i) = K[j][i];
 		}
 	}
 
-	for (int i = 0; i < 2 * d.nodes.size(); i++)//¹²2 * sizeof(nodes)ÁĞ ×é³ÉÒ»ĞĞ
+	for (int i = 0; i < 2 * d.nodes.size(); i++)//å…±2 * sizeof(nodes)åˆ— ç»„æˆä¸€è¡Œ
 	{
 		Fmatrix(i) = F[i];
 	}
 
-	// QR ·Ö½âÇó³öÎ»ÒÆÏòÁ¿x
+	// QR åˆ†è§£æ±‚å‡ºä½ç§»å‘é‡x
 	VectorXd x = Kmatrix.colPivHouseholderQr().solve(Fmatrix);
 
-
-
-
-	//°ÑÎ»ÒÆÏòÁ¿»¯Îªn³Ë2µÄ¾ØÕó£¬·½±ãÊä³ö
+	//æŠŠä½ç§»å‘é‡åŒ–ä¸ºnä¹˜2çš„çŸ©é˜µï¼Œæ–¹ä¾¿è¾“å‡º
 	vector<double> s(2, 0);
 	vector<vector<double>> X(d.nodes.size(), s);
-	// Çå¿Õs vector ²¢ÇÒ»ØÊÕÄÚ´æ
+	// æ¸…ç©ºs vector å¹¶ä¸”å›æ”¶å†…å­˜
 	vector<double>().swap(s);
-	for (int i = 0; i < 2 * d.nodes.size(); i = i + 2)    //°ÑÒ»ÁĞ»¯ÎªÁ½ÁĞ
+	for (int i = 0; i < 2 * d.nodes.size(); i = i + 2)    //æŠŠä¸€åˆ—åŒ–ä¸ºä¸¤åˆ—
 	{
 		X[i / 2][0] = x(i);
 		X[i / 2][1] = x(i + 1);
 	}
 
-
-
-
-
-
-
-	//Çó³öÓ¦Á¦
+	//æ±‚å‡ºåº”åŠ›
 	vector<double> stress_x(d.nodes.size(), 0);
 	vector<double> stress_y(d.nodes.size(), 0);
 	vector<double> stress_xy(d.nodes.size(), 0);
 
 	double E = 166667, u = 0.3;
 	double D[3][3] = { E / (1 - u * u) ,E * u / (1 - u * u) , 0, E * u / (1 - u * u) ,E / (1 - u * u) , 0, 0, 0,(1 - u) * E / (2 * (1 - u * u)) };
-	double f[2] = { -0.577350 , 0.577350 };	//¼ÙÉèĞèÒªÁ½¸ö¸ßË¹»ı·Öµã£¬²éÑ¯¸ßË¹»ı·Ö±íµÃµ½Á½¸ö¸ßË¹µãµÄº¯ÊıÖµ
+	double f[2] = { -0.577350 , 0.577350 };	//å‡è®¾éœ€è¦ä¸¤ä¸ªé«˜æ–¯ç§¯åˆ†ç‚¹ï¼ŒæŸ¥è¯¢é«˜æ–¯ç§¯åˆ†è¡¨å¾—åˆ°ä¸¤ä¸ªé«˜æ–¯ç‚¹çš„å‡½æ•°å€¼
 	for (int i = 0; i < d.elements.size(); i++)
 	{
 		vector<vector<double>> bmatrix = BMatrix(d.nodes[d.elements[i][0]-1][0], d.nodes[d.elements[i][0]-1][1] , d.nodes[d.elements[i][1]-1][0], d.nodes[d.elements[i][1]-1][1], d.nodes[d.elements[i][2]-1][0], d.nodes[d.elements[i][2]-1][1], d.nodes[d.elements[i][3]-1][0], d.nodes[d.elements[i][3]-1][1], f[0], f[1]);
@@ -200,28 +191,28 @@ void ex1()
 	}
 
 	
-	ofstream outFile;//´´½¨ÁËÒ»¸öofstream ¶ÔÏó
-	outFile.open("myresult.dat");//outFile ÓëÒ»¸öÎÄ±¾ÎÄ¼ş¹ØÁª
-		// cout ¿ØÖÆÌ¨Êä³öÇ°ÃæÊäÈëµÄĞÅÏ¢
+	ofstream outFile;//åˆ›å»ºäº†ä¸€ä¸ªofstream å¯¹è±¡
+	outFile.open("myresult.dat");//outFile ä¸ä¸€ä¸ªæ–‡æœ¬æ–‡ä»¶å…³è”
+		// cout æ§åˆ¶å°è¾“å‡ºå‰é¢è¾“å…¥çš„ä¿¡æ¯
 
-	cout << fixed;
-	cout.setf(ios_base::showpoint);
-	cout << "TITLE = 'RESULT'"<< endl;
-	cout << "VARIABLES = 'X','Y','Z','xstrain', 'ystrain', 'xStress', 'yStress', 'xyStress'"<< endl;
-	cout << "ZONE N=" << d.nodes.size() << ", E=" << d.elements.size() << ", F=FEPOINT, ET=QUADRILATERAL" << endl;
-	for (int i = 0; i < d.nodes.size(); i++)
-{
-	cout << d.nodes[i][0] << "  " << d.nodes[i][1] << "  " << 0 << "  " << X[i][0] << "   " << X[i][1] << "  " << stress_x[i] << "   " << stress_y[i] << "  " << stress_xy[i] << endl;
-}
-	for (int i = 0; i < d.elements.size() ;i++)
-	 {
-		cout << d.elements[i][0] << "  " << d.elements[i][1] << "  " << d.elements[i][2]<< "  " << d.elements[i][3]<<endl;
-	 }
+// 	cout << fixed;
+// 	cout.setf(ios_base::showpoint);
+// 	cout << "TITLE = 'RESULT'"<< endl;
+// 	cout << "VARIABLES = 'X','Y','Z','xstrain', 'ystrain', 'xStress', 'yStress', 'xyStress'"<< endl;
+// 	cout << "ZONE N=" << d.nodes.size() << ", E=" << d.elements.size() << ", F=FEPOINT, ET=QUADRILATERAL" << endl;
+// 	for (int i = 0; i < d.nodes.size(); i++)
+// {
+// 	cout << d.nodes[i][0] << "  " << d.nodes[i][1] << "  " << 0 << "  " << X[i][0] << "   " << X[i][1] << "  " << stress_x[i] << "   " << stress_y[i] << "  " << stress_xy[i] << endl;
+// }
+// 	for (int i = 0; i < d.elements.size() ;i++)
+// 	 {
+// 		cout << d.elements[i][0] << "  " << d.elements[i][1] << "  " << d.elements[i][2]<< "  " << d.elements[i][3]<<endl;
+// 	 }
 
-	// outFile °ÑĞÅÏ¢Ğ´Èëµ½ÎÄ±¾ÎÄ¼ş
-	outFile << fixed;    //Ğ¡Êıµã¸ñÊ½ÏÔÊ¾double
+	// outFile æŠŠä¿¡æ¯å†™å…¥åˆ°æ–‡æœ¬æ–‡ä»¶
+	outFile << fixed;    //å°æ•°ç‚¹æ ¼å¼æ˜¾ç¤ºdouble
 
-	outFile.setf(ios_base::showpoint);    //Ç¿ÖÆÏÔÊ¾Ğ¡ÊıµãºóµÄÁã
+	outFile.setf(ios_base::showpoint);    //å¼ºåˆ¶æ˜¾ç¤ºå°æ•°ç‚¹åçš„é›¶
 	outFile << "TITLE = 'RESULT'"<< endl;
 	outFile << "VARIABLES = 'X','Y','Z','xstrain', 'ystrain', 'xStress', 'yStress', 'xyStress'"<< endl;
 	outFile<< "ZONE N=" << d.nodes.size() << ", E=" << d.elements.size() << ", F=FEPOINT, ET=QUADRILATERAL" << endl;
@@ -233,22 +224,16 @@ void ex1()
 	{
 		outFile << d.elements[i][0] << "  " << d.elements[i][1] << "  " << d.elements[i][2] << "  " << d.elements[i][3] << endl;
 	}
-	outFile.close();    //Ê¹ÓÃÍêÎÄ±¾ÎÄ¼şºóÒªÓÃclose()·½·¨½«Æä¹Ø±Õ
+	outFile.close();    //ä½¿ç”¨å®Œæ–‡æœ¬æ–‡ä»¶åè¦ç”¨close()æ–¹æ³•å°†å…¶å…³é—­
 
-
-
-
-
-	
-
-	////Ö±½ÓÊä³ö½á¹û
+	////ç›´æ¥è¾“å‡ºç»“æœ
 	//for (int i = 0; i < d.nodes.size(); i++)
 	//{
 	//	cout << d.nodes[i][0] << "  " << d.nodes[i][1] << "  " << X[i][0] << "   " << X[i][1] << "  " << stress_x[i] << "   " << stress_y[i] << "  " << stress_xy[i] << endl;
 	//}
+	cout << "Example 1 complete" << endl;
 	
-	
-	}
+}
 
 
 

@@ -1,5 +1,6 @@
 ##ignore this file##
-/x64/
-/Q4_Program/x64/
-/.vs/
-*.props
+##忽略build和bin文件夹下所有的文件，bin下的mesh.k除外
+/build/.
+/bin/.
+!/bin/mesh.k
+!/build/mesh.k

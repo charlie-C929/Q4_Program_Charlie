@@ -6,38 +6,38 @@
 
 vector<vector<double>> ElementStiffness(double E, double u, double h, double x1, double y1, double x2, double y2, double x3, double y3, double x4, double y4)
 {
-	//				µ¥Ôª¸Õ¶È¾ØÕóÎª8x8¾ØÕó
-	//				E £ºµ¯ĞÔÄ£Á¿£»u £º²´ËÉ±È£»h£ººñ¶È
-	//				µ¯ĞÔ¾ØÕó D
+	//				å•å…ƒåˆšåº¦çŸ©é˜µä¸º8x8çŸ©é˜µ
+	//				E ï¼šå¼¹æ€§æ¨¡é‡ï¼›u ï¼šæ³Šæ¾æ¯”ï¼›hï¼šåšåº¦
+	//				å¼¹æ€§çŸ©é˜µ D
 
 	double D[3][3] = { E / (1 - u * u) ,E * u / (1 - u * u) , 0, E * u / (1 - u * u) ,E / (1 - u * u) , 0, 0, 0,(1 - u) * E / (2 * (1 - u * u)) };
 
 
-	//				³õÊ¼»¯µ¥Ôª¸Õ¶È¾ØÕó
+	//				åˆå§‹åŒ–å•å…ƒåˆšåº¦çŸ©é˜µ
 
-	vector<vector<double>> Ke;		//	´´½¨Ò»¸ö¶şÎ¬ÏòÁ¿
+	vector<vector<double>> Ke;		//	åˆ›å»ºä¸€ä¸ªäºŒç»´å‘é‡
 	vector<double> b;
 	for (int j = 0; j < 8; j++)
 	{
 		b.push_back(0);
 	}
-	for (int i = 0; i < 8; i++)   //³õÊ¼»¯
+	for (int i = 0; i < 8; i++)   //åˆå§‹åŒ–
 	{
 		Ke.push_back(b);
 	}
 
-	//				¸ßË¹»ı·Ö
+	//				é«˜æ–¯ç§¯åˆ†
 	
-	double x[2] = { -0.577350 , 0.577350 };	//¼ÙÉèĞèÒªÁ½¸ö¸ßË¹»ı·Öµã£¬²éÑ¯¸ßË¹»ı·Ö±íµÃµ½Á½¸ö¸ßË¹µãµÄº¯ÊıÖµ
-	int W[2] = { 1,1 };			        	//¸ßË¹»ı·ÖµÄÈ¨ÖØ
+	double x[2] = { -0.577350 , 0.577350 };	//å‡è®¾éœ€è¦ä¸¤ä¸ªé«˜æ–¯ç§¯åˆ†ç‚¹ï¼ŒæŸ¥è¯¢é«˜æ–¯ç§¯åˆ†è¡¨å¾—åˆ°ä¸¤ä¸ªé«˜æ–¯ç‚¹çš„å‡½æ•°å€¼
+	int W[2] = { 1,1 };			        	//é«˜æ–¯ç§¯åˆ†çš„æƒé‡
 
 
-	double B[3][8], Bt[8][3];				//  ¶¨Òå¼¸ºÎ¾ØÕó¼°Æä×ªÖÃ
-	double J[2][2];							//  ¶¨ÒåÑÅ¿É±È¾ØÕó
+	double B[3][8], Bt[8][3];				//  å®šä¹‰å‡ ä½•çŸ©é˜µåŠå…¶è½¬ç½®
+	double J[2][2];							//  å®šä¹‰é›…å¯æ¯”çŸ©é˜µ
 	double detJ = 0;
 	double BtD[8][3];
 
-	//				³õÊ¼»¯BtD
+	//				åˆå§‹åŒ–BtD
 
 	for (int i = 0; i < 8; i++)
 	{
@@ -47,14 +47,14 @@ vector<vector<double>> ElementStiffness(double E, double u, double h, double x1,
 		}
 	}
 
-	//		¶ÔËÄ¸ö»ı·Öµã½øĞĞ¸ßË¹»ı·Ö£¬Çó½âµ¥Ôª¸Õ¶È¾ØÕó
+	//		å¯¹å››ä¸ªç§¯åˆ†ç‚¹è¿›è¡Œé«˜æ–¯ç§¯åˆ†ï¼Œæ±‚è§£å•å…ƒåˆšåº¦çŸ©é˜µ
 
 	for (int a = 0; a < 2; a++)
 	{
 		for (int b = 0; b < 2; b++)
 		{
 
-			//				³õÊ¼»¯BtD
+			//				åˆå§‹åŒ–BtD
 			for (int i = 0; i < 8; i++)
 			{
 				for (int j = 0; j < 3; j++)
@@ -63,7 +63,7 @@ vector<vector<double>> ElementStiffness(double E, double u, double h, double x1,
 				}
 			}
 
-			//				Çó¼¸ºÎ¾ØÕóB¼°Æä×ªÖÃ¾ØÕó
+			//				æ±‚å‡ ä½•çŸ©é˜µBåŠå…¶è½¬ç½®çŸ©é˜µ
 			vector<vector<double>> bmatrix = BMatrix(x1, y1, x2, y2, x3, y3, x4, y4, x[a], x[b]);
 			for (int s = 0; s < 3; s++)
 			{
@@ -72,7 +72,7 @@ vector<vector<double>> ElementStiffness(double E, double u, double h, double x1,
 					B[s][k] = bmatrix[s][k];
 				}
 			}
-			//	B ×ªÖÃ¾ØÕóBt
+			//	B è½¬ç½®çŸ©é˜µBt
 
 			for (int s = 0; s < 3; s++)
 			{
@@ -84,7 +84,7 @@ vector<vector<double>> ElementStiffness(double E, double u, double h, double x1,
 				}
 			}
 
-			//			ÇóÑÅ¿É±È¾ØÕó J	ÒÔ¼°detJ
+			//			æ±‚é›…å¯æ¯”çŸ©é˜µ J	ä»¥åŠdetJ
 			vector<vector<double>>Ja = Jacobi(x1, y1, x2, y2, x3, y3, x4, y4, x[a], x[b]);
 			for (int i = 0; i < 2; i++)
 			{
@@ -96,7 +96,7 @@ vector<vector<double>> ElementStiffness(double E, double u, double h, double x1,
 			detJ = J[0][0] * J[1][1] - J[1][0] * J[0][1];
 			
 
-			//			BµÄ×ªÖÃ¡ÁD  BtD
+			//			Bçš„è½¬ç½®Ã—D  BtD
 			for (int i = 0; i < 8; i++)
 			{
 				for (int j = 0; j < 3; j++)
@@ -107,7 +107,7 @@ vector<vector<double>> ElementStiffness(double E, double u, double h, double x1,
 					}
 				}
 			}
-			//			Çóµ¥Ôª¸Õ¶È¾ØÕó
+			//			æ±‚å•å…ƒåˆšåº¦çŸ©é˜µ
 			for (int i = 0; i < 8; i++)
 			{
 				for (int j = 0; j < 8; j++)
