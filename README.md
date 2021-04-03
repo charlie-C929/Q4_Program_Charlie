@@ -22,9 +22,10 @@ sudo apt install libeigen3-dev
 git clone https://github.com/charlie-C929/Q4_Program_Charlie.git
 ```
 
-进入build文件夹，
+创建build文件夹，
 
 ```bash
+mkdir build
 cd build
 cmake .. 
 make
