@@ -2,5 +2,6 @@
 ##忽略build和bin文件夹下所有的文件，bin下的mesh.k除外
 /build/.
 /bin/.
+/.vscode
 !/bin/mesh.k
 !/build/mesh.k
